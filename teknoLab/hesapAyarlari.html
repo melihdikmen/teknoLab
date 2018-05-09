@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>Hesap Ayarları</title>
+	<style type="text/css">
+		body{
+			background: #eee;
+		}
+		.footer{
+			background: #111;
+			color: #aaa;
+			padding: 10px;
+			text-align: center;
+		}
+		div.sticky {
+			position: -webkit-sticky;
+			position: sticky;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<a href="odev.html">
+				<img src="http://tf.selcuk.edu.tr/images/tf_logo_tr.png" href="odev.html">
+			</a>
+		</div>
+		<div class="col-md-9">
+			<h1>Teknoloji Fakültesi<br>Labaratuvar Kullanım Planlama</h1>
+				<p>Labaratuvarların kullanım planları, labaratuvarlar hakkında bilgiler, öğretim görevlilerine özel labaratuvar planlama ayarları ve daha fazlası...</p> 
+			</div>
+	</div>
+
+</div>
+
+<div class="sticky">
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="odev.html">Tekno-Lab</a>
+    </div>
+    	<ul class="nav navbar-nav">
+      		<li class="active"><a href="odev.html">Ana Sayfa</a></li>
+      		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Öğretim Görevlisi <span class="caret"></span></a>
+        		<ul class="dropdown-menu">
+		          	<li><a href="ikinci.html">Labaratuvar Kullanım Ekle</a></li>
+		          	<li><a href="hesapAyarlari.html">Hesap Ayarları</a></li>
+        		</ul>
+      		</li>
+      		<li><a href="labaratuvarlarımız.html">Labaratuvarlarımız</a></li>
+    	</ul>
+    	<ul class="nav navbar-nav navbar-right">
+      		<li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    	</ul>
+  	</div>
+	</nav>
+</div>
+
+	<div class="container">
+		<div class="panel-group">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					Kişisel Bilgiler
+				</div>
+				<div class="panel-body">
+					<label for="ad">Kullanıcı Adı:</label>
+					<input type="text" class="form-control" id="ad">
+					<label for="soyad">Şifre:</label>
+					<input type="text" class="form-control" id="soyad">
+					<label for="unvan">Ünvan:</label>
+					<input type="text" class="form-control" id="unvan">
+					<label for="unvan">E-Posta:</label>
+					<input type="text" class="form-control" id="eposta">
+					<button type="button" class="btn btn-success pull-right" style="margin-top: 5px; margin-bottom: 5px;">Bilgileri Güncelle</button>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="footer">
+		<p>© Copyright 2018 Abdülbaki & Melih</p>
+	</div>
+
+	<?php
+		#PHP kodlarının yer alacağı bölüm..
+	?>
+</body>
+</html>

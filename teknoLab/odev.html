@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>Teknoloji Labaratuvar</title>
+	<style type="text/css">
+		body{
+			background: #eee;
+		}
+		table{
+			border: 1px solid black;
+		}
+		.footer{
+			background: #111;
+			color: #aaa;
+			padding: 10px;
+			text-align: center;
+		}
+		div.sticky {
+			position: -webkit-sticky;
+			position: sticky;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<a href="odev.html">
+				<img src="http://tf.selcuk.edu.tr/images/tf_logo_tr.png" href="odev.html">
+			</a>
+		</div>
+		<div class="col-md-9">
+			<h1>Teknoloji Fakültesi<br>Labaratuvar Kullanım Planlama</h1>
+				<p>Labaratuvarların kullanım planları, labaratuvarlar hakkında bilgiler, öğretim görevlilerine özel labaratuvar planlama ayarları ve daha fazlası...</p> 
+			</div>
+	</div>
+
+</div>
+
+<div class="sticky">
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="odev.html">Tekno-Lab</a>
+    </div>
+    	<ul class="nav navbar-nav">
+      		<li class="active"><a href="odev.html">Ana Sayfa</a></li>
+      		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Öğretim Görevlisi <span class="caret"></span></a>
+        		<ul class="dropdown-menu">
+		          	<li><a href="ikinci.html">Labaratuvar Kullanım Ekle</a></li>
+		          	<li><a href="hesapAyarlari.html">Hesap Ayarları</a></li>
+        		</ul>
+      		</li>
+      		<li><a href="labaratuvarlarımız.html">Labaratuvarlarımız</a></li>
+    	</ul>
+    	<ul class="nav navbar-nav navbar-right">
+      		<li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    	</ul>
+  	</div>
+	</nav>
+</div>
+
+	<div class="container">
+  		<h2>Lab-1</h2>
+  		<p>İçerisinde 42 adet bilgisayar, projeksiyon makinesi, yazı tahtası bulunmaktadır. Bu alana öğreyim görevlileri açıklamalar ekleyebilecekler.</p>                                                                                      
+	  	<div class="table-responsive">          
+	  		<table class="table table-hover">
+		    	<thead>
+			      	<tr>
+				        <th>#</th>
+				        <th>Öğretim Görevlisi</th>
+				        <th>Ders Adı</th>
+				        <th>Öğretim</th>
+				        <th>Gün</th>
+				        <th>Saat</th>
+			      	</tr>
+		    	</thead>
+			    <tbody>
+			      	<tr class="success"><!--yeşil-->
+				        <td>1</td>
+				        <td>Prof. Dr. Fatih Başçiftçi</td>
+				        <td>Programlama Dili-1</td>
+				        <td>Normal Öğretim</td>
+				        <td>Salı</td>
+				        <td>10:20 - 12:00</td>
+			      	</tr>
+			    </tbody>
+	  		</table>
+	  	</div>
+	</div>
+
+	<div class="container">
+  		<h2>Lab-2</h2>
+  		<p>Bu alana öğreyim görevlileri açıklamalar ekleyebilecekler.</p>                                                                                      
+	  	<div class="table-responsive">          
+	  		<table class="table table-hover">
+		    	<thead>
+			      	<tr>
+				        <th>#</th>
+				        <th>Öğretim Görevlisi</th>
+				        <th>Ders Adı</th>
+				        <th>Öğretim</th>
+				        <th>Gün</th>
+				        <th>Saat</th>
+			      	</tr>
+		    	</thead>
+			    <tbody>
+			      	<tr class="danger"><!--danger öğretim göreblisi tarafından o gün iptal edilen dersler için gösterilecek!-->
+				        <td>1</td>
+				        <td>Doç. Dr. M. Nevzat Örnek</td>
+				        <td>Bilgisayar Ağ ve Güvenliği</td>
+				        <td>İkinci Öğretim</td>
+				        <td>Perşembe</td>
+				        <td>19:10 - 21:30</td>
+			      	</tr>
+			    </tbody>
+	  		</table>
+	  	</div>
+	</div>
+
+	<div class="container">
+  		<h2>Lab-3</h2>
+  		<p>Bu alana öğreyim görevlileri açıklamalar ekleyebilecekler.</p>                                                                                      
+	  	<div class="table-responsive">          
+	  		<table class="table table-hover">
+		    	<thead>
+			      	<tr>
+				        <th>#</th>
+				        <th>Öğretim Görevlisi</th>
+				        <th>Ders Adı</th>
+				        <th>Öğretim</th>
+				        <th>Gün</th>
+				        <th>Saat</th>
+			      	</tr>
+		    	</thead>
+			    <tbody>
+			      	<tr class="info"><!--"info" (mavi renk), saat değişikliği veya benzeri değişikliklerde öğretim görevlisi tarafından gösterilebilecek.-->
+				        <td>1</td>
+				        <td>öğrtmen adi</td>
+				        <td>ders adi</td>
+				        <td>İkinci Öğretim</td>
+				        <td>Çarşamba</td>
+				        <td>19:10 - 21:30</td>
+			      	</tr>
+			    </tbody>
+			    <tbody>
+			      	<tr class="success">
+				        <td>2</td>
+				        <td>öğrtmen adi</td>
+				        <td>ders adi</td>
+				        <td>İkinci Öğretim</td>
+				        <td>Çarşamba</td>
+				        <td>19:10 - 21:30</td>
+			      	</tr>
+			    </tbody>
+			    <tbody>
+			      	<tr class="danger"><!--danger öğretim göreblisi tarafından o gün iptal edilen dersler için gösterilecek!-->
+				        <td>2</td>
+				        <td>Doç. Dr. M. Nevzat Örnek</td>
+				        <td>Bilgisayar Ağ ve Güvenliği</td>
+				        <td>İkinci Öğretim</td>
+				        <td>Perşembe</td>
+				        <td>19:10 - 21:30</td>
+			      	</tr>
+			    </tbody>
+	  		</table>
+	  	</div>
+	</div>
+
+	<div class="footer">
+		<p>© Copyright 2018 Abdülbaki & Melih</p>
+	</div>
+
+	<?php
+		#PHP kodlarının yer alacağı bölüm..
+	?>
+</body>
+</html>
