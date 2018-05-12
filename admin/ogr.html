@@ -25,13 +25,13 @@
 	           <div class="col-md-5">
 	              <!-- Logo -->
 	              <div class="logo">
-	                 <h1><a href="index.html">Admin Yönetim Paneli</a></h1>
+	                 <h1><a href="index.php">Admin Yönetim Paneli</a></h1>
 	              </div>
 	           </div>
 	           <div class="col-md-5">
 	              <div class="row">
 	                <div class="col-lg-12">
-	                  
+
 	                </div>
 	              </div>
 	           </div>
@@ -61,7 +61,7 @@
 		  	<div class="sidebar content-box" style="display: block;">
                 <ul class="nav">
                     <!-- Main menu -->
-                    <li><a href="index.html"><i class="glyphicon glyphicon-home"></i> Kullanıcılar</a></li>
+                    <li><a href="index.php"><i class="glyphicon glyphicon-home"></i> Kullanıcılar</a></li>
                     <li class="submenu">
                          <a href="#">
                             <i class="glyphicon glyphicon-list"></i>Öğretim Görevlisi
@@ -70,9 +70,9 @@
                          <!-- Sub menu -->
                          <ul>
                             <li><a href="ogr.html">Ekle</a></li>
-                            <li><a href="duzenle.html">Düzenle</a></li>
+                            <li><a href="duzenle.php">Düzenle</a></li>
                         </ul>
-                
+
                      <li class="submenu">
                          <a href="#">
                             <i class="glyphicon glyphicon-list"></i> Ders ve Laboratuvarlar
@@ -80,34 +80,40 @@
                          </a>
                          <!-- Sub menu -->
                          <ul>
-                            <li><a href="dersvelabekle.html">Ders ve Laboratuvar Ekle</a></li>
+                            <li><a href="dersvelabekle.php">Ders ve Laboratuvar Ekle</a></li>
 							<li><a href="dersvelabduz.html">Ders ve Laboratuvar Düzenle</a></li>
-							
-                        
+
+
                         </ul>
                     </li>
                 </ul>
              </div>
 		  </div>
 		  <div class="col-md-10">
-  			<div class="row">			
-				<div class="panel panel-danger">
+  			<div class="row">
+				<div class="panel panel-success">
 					<div class="panel-heading">
-					Yeni Admin Hesap Bilgileri
+					Ogretim Görevlisi
 					</div>
 					<div class="panel-body">
-					
-					
-					<label for="unvan">Kullanıcı Adı:</label>
-					<input type="text" class="form-control" id="username">
-					<label for="unvan">Şifre:</label>
-					<input type="text" class="form-control" id="password">
-					<label for="unvan">E-posta:</label>
-					<input type="text" class="form-control" id="eposta">
-					<button type="submit" class="btn btn-danger pull-right" style="margin-top: 5px; margin-bottom: 5px;">Ekle</button>
+            <form action="ogrekle.php" method="post">
+    					<label for="ad">Ad:</label>
+    					<input type="text" class="form-control" name="ad">
+    					<label for="soyad">Soyad:</label>
+    					<input type="text" class="form-control" name="soyad">
+    					<label for="unvan">Ünvan:</label>
+    					<input type="text" class="form-control" name="unvan">
+    					<label for="unvan">E-posta:</label>
+    					<input type="text" class="form-control" name="eposta">
+    					<label for="unvan">Kullanıcı Adı:</label>
+    					<input type="text" class="form-control" name="username">
+    					<label for="unvan">Şifre:</label>
+    					<input type="password" class="form-control" name="password">
+    					<button type="submit" class="btn btn-success pull-right" style="margin-top: 5px; margin-bottom: 5px;">Ekle</button>
+            </form>
 				</div>
 			</div>
-  			
+
 
 
 
@@ -117,11 +123,11 @@
 
     <footer>
          <div class="container">
-         
+
             <div class="copy text-center">
                Copyright 2014 <a href='#'>Website</a>
             </div>
-            
+
          </div>
       </footer>
 

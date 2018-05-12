@@ -70,7 +70,7 @@
                          <!-- Sub menu -->
                          <ul>
                             <li><a href="ogr.html">Ekle</a></li>
-                            <li><a href="duzenle.html">Düzenle</a></li>
+                            <li><a href="duzenle.php">Düzenle</a></li>
                         </ul>
 
                      <li class="submenu">
@@ -80,7 +80,7 @@
                          </a>
                          <!-- Sub menu -->
                          <ul>
-                            <li><a href="dersvelabekle.html">Ders ve Laboratuvar Ekle</a></li>
+                            <li><a href="dersvelabekle.php">Ders ve Laboratuvar Ekle</a></li>
 							<li><a href="dersvelabduz.html">Ders ve Laboratuvar Düzenle</a></li>
 
 
@@ -89,30 +89,54 @@
                 </ul>
              </div>
 		  </div>
-		  <div class="col-md-10">
+		  <div class="col-md-4">
   			<div class="row">
-				<div class="panel panel-danger">
+				<div class="panel panel-info">
 					<div class="panel-heading">
-					Hesap Bilgileri
+					Ders Ekle
 					</div>
 					<div class="panel-body">
+					<form action="dersekle.php" method="POST">
+					<label for="ad">Ders Adı:</label>
+					<input type="text" class="form-control" name="dersad">
+					<label for="ad">Öğretim Görevlisi Adı:</label>
+					<input type="text" class="form-control" name="ograd">
+					<label for="ad">Öğretim Görevlisi Soyadı:</label>
+					<input type="text" class="form-control" name="ogrsoyad">
 
 
-					<label for="unvan">Kullanıcı Adı:</label>
-					<input type="text" class="form-control" id="username">
-					<label for="unvan">Şifre:</label>
-					<input type="text" class="form-control" id="password">
-					<label for="unvan">E-posta:</label>
-					<input type="text" class="form-control" id="eposta">
-					<button type="submit" class="btn btn-danger pull-right" style="margin-top: 5px; margin-bottom: 5px;">Güncelle</button>
+					<button type="submit" class="btn btn-info pull-right" style="margin-top: 5px; margin-bottom: 5px;">Ekle</button>
+					</form>
 				</div>
 			</div>
 
+		  </div>
+		</div>
 
 
+		<div class="col-md-5">
+  			<div class="row">
+				<div class="panel panel-info " style="margin-left:20%;">
+					<div class="panel-heading">
+					Laboratuvar Ekle
+					</div>
+					<div class="panel-body">
+					<form action="labekle.php" method="post">
+					<label for="ad">Laboratuvar Adı:</label>
+
+					<input type="text" class="form-control" name="labad">
+					<label for="ad">Laboratuvar Bilgisi:</label>
+					<input type="text" class="form-control" name="labinfo">
+
+					<button type="submit" class="btn btn-info pull-right" style="margin-top: 5px; margin-bottom: 5px;">Ekle</button>
+					</form>
+				</div>
+			</div>
 
 		  </div>
 		</div>
+
+
     </div>
 
     <footer>

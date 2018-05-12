@@ -43,9 +43,8 @@
 	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hesabım <b class="caret"></b></a>
 	                        <ul class="dropdown-menu animated fadeInUp">
 	                          <li><a href="profile.html">Profil</a></li>
-							   <li><a href="newadmin.html">Yeni Admin Ekle</a></li>
+							  <li><a href="newadmin.html">Yeni Admin Ekle</a></li>
 	                          <li><a href="login.html">Çıkış</a></li>
-
 	                        </ul>
 	                      </li>
 	                    </ul>
@@ -71,17 +70,17 @@
                          <!-- Sub menu -->
                          <ul>
                             <li><a href="ogr.html">Ekle</a></li>
-                            <li><a href="duzenle.html">Düzenle</a></li>
+                            <li><a href="">Düzenle</a></li>
                         </ul>
 
-                    <li class="submenu">
+                     <li class="submenu">
                          <a href="#">
                             <i class="glyphicon glyphicon-list"></i> Ders ve Laboratuvarlar
                             <span class="caret pull-right"></span>
                          </a>
                          <!-- Sub menu -->
                          <ul>
-                            <li><a href="dersvelabekle.html">Ders ve Laboratuvar Ekle</a></li>
+                            <li><a href="dersvelabekle.php">Ders ve Laboratuvar Ekle</a></li>
 							<li><a href="dersvelabduz.html">Ders ve Laboratuvar Düzenle</a></li>
 
 
@@ -91,60 +90,52 @@
              </div>
 		  </div>
 		  <div class="col-md-10">
-
-
-
-
-
-
-
   			<div class="row">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+					Ogretim Görevlisi Düzenleme Ekranı
+					</div>
+					<div class="panel-body">
+          <form id="guncelle" method="POST">
+					<div class="form-group">
+
+						  <label for="sel1" >Ad:</label>
+						  <select onload ="getir(this.value)" onchange="getir(this.value)" class="form-control" id="sel1" name="ad">
+                <?php
+                include ("baglan.php");
+
+                $sql=mysqli_query($baglan,"select * from ogr ");
+
+                while($oku=mysqli_fetch_array($sql))
+                {
+                  $ad=$oku["ad"];
+
+                  echo "<option>$ad</option>";
+
+                }
 
 
-  			<div class="content-box-large">
-  				<div class="panel-heading">
-					<div class="panel-title">Yetkili Listesi</div>
+
+                ?>
+
+
+						  </select>
+						</div>
+					<label for="soyad">Soyad:</label>
+					<input type="text" class="form-control" id="soyad" name="soyad"  >
+					<label for="unvan">Ünvan:</label>
+					<input type="text" class="form-control" id="unvan" name="unvan" >
+					<label for="unvan">E-posta:</label>
+					<input type="text" class="form-control" id="eposta" name="eposta" >
+					<label for="unvan">Kullanıcı Adı:</label>
+					<input type="text" class="form-control" id="username" name="username" >
+					<label for="unvan">Şifre:</label>
+					<input type="text" class="form-control" id="password" name="password" >
+					<button type="submit" onclick="submitForm('sil.php')" class="btn btn-danger pull-right" style="margin-top: 5px; margin-bottom: 5px;">Sil</button>
+					<button type="submit"  onclick="submitForm('ogrguncelle.php')" class="btn btn-success pull-right" style="margin-top: 5px; margin-bottom: 5px;">Güncelle</button>
+        </form>
 				</div>
-  				<div class="panel-body">
-  					<div class="table-responsive">
-  						<table class="table" action="" method="POST">
-			              <thead>
-			                <tr>
-			                  <th>#</th>
-			                  <th>First Name</th>
-			                  <th>Last Name</th>
-			                  <th>Username</th>
-			                </tr>
-			              </thead>
-			              <tbody>
-                    <?php
-
-                      include ("baglan.php");
-                      $sql=mysqli_query($baglan,"select * from ogr ");
-                      $sayac=1;
-                      while($oku=mysqli_fetch_array($sql))
-                      {
-                        $ad=$oku["ad"];
-                        $soyad=$oku["soyad"];
-                        $username=$oku["username"];
-                        echo "<tr>
-                        <td>$sayac</td>
-                        <td>$ad</td>
-                        <td>$soyad</td>
-                        <td>$username</td>
-                      </tr>";
-                      $sayac++;
-                      }
-
-
-
-
-                      ?>
-			            </table>
-  					</div>
-  				</div>
-  			</div>
-
+			</div>
 
 
 
@@ -178,5 +169,6 @@
 
     <script src="js/custom.js"></script>
     <script src="js/tables.js"></script>
+    <script src="js/duzenle.js"></script>
   </body>
 </html>

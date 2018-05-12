@@ -40,11 +40,12 @@
 	                  <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
 	                    <ul class="nav navbar-nav">
 	                      <li class="dropdown">
-	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hesabım<b class="caret"></b></a>
+	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hesabım <b class="caret"></b></a>
 	                        <ul class="dropdown-menu animated fadeInUp">
 	                          <li><a href="profile.html">Profil</a></li>
-							  <li><a href="newadmin.html">Yeni Admin Ekle</a></li>
+							   <li><a href="newadmin.html">Yeni Admin Ekle</a></li>
 	                          <li><a href="login.html">Çıkış</a></li>
+
 	                        </ul>
 	                      </li>
 	                    </ul>
@@ -70,17 +71,17 @@
                          <!-- Sub menu -->
                          <ul>
                             <li><a href="ogr.html">Ekle</a></li>
-                            <li><a href="duzenle.html">Düzenle</a></li>
+                            <li><a href="duzenle.php">Düzenle</a></li>
                         </ul>
 
-                     <li class="submenu">
+                    <li class="submenu">
                          <a href="#">
                             <i class="glyphicon glyphicon-list"></i> Ders ve Laboratuvarlar
                             <span class="caret pull-right"></span>
                          </a>
                          <!-- Sub menu -->
                          <ul>
-                            <li><a href="dersvelabekle.html">Ders ve Laboratuvar Ekle</a></li>
+                            <li><a href="dersvelabekle.php">Ders ve Laboratuvar Ekle</a></li>
 							<li><a href="dersvelabduz.html">Ders ve Laboratuvar Düzenle</a></li>
 
 
@@ -89,61 +90,67 @@
                 </ul>
              </div>
 		  </div>
-		  <div class="col-md-4">
+		  <div class="col-md-10">
+
+
+
+
+
+
+
   			<div class="row">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-					Ders Sil
-					</div>
-					<div class="panel-body">
-					<label for="ad">Ders Adı:</label>
 
-					<div class="form-group">
-					  <label for="sel1">Dersler</label>
-					  <select class="form-control" id="sel1">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-					  </select>
-					</div>
 
-					<button type="submit" class="btn btn-danger pull-right" style="margin-top: 5px; margin-bottom: 5px;">Sil</button>
+  			<div class="content-box-large">
+  				<div class="panel-heading">
+					<div class="panel-title">Yetkili Listesi</div>
 				</div>
-			</div>
+  				<div class="panel-body">
+  					<div class="table-responsive">
+  						<table class="table" action="" method="POST">
+			              <thead>
+			                <tr>
+			                  <th>#</th>
+			                  <th>First Name</th>
+			                  <th>Last Name</th>
+			                  <th>Username</th>
+			                </tr>
+			              </thead>
+			              <tbody>
+                    <?php
+
+                      include ("baglan.php");
+                      $sql=mysqli_query($baglan,"select * from ogr ");
+                      $sayac=1;
+                      while($oku=mysqli_fetch_array($sql))
+                      {
+                        $ad=$oku["ad"];
+                        $soyad=$oku["soyad"];
+                        $username=$oku["username"];
+                        echo "<tr>
+                        <td>$sayac</td>
+                        <td>$ad</td>
+                        <td>$soyad</td>
+                        <td>$username</td>
+                      </tr>";
+                      $sayac++;
+                      }
+
+
+
+
+                      ?>
+			            </table>
+  					</div>
+  				</div>
+  			</div>
+
+
+
+
 
 		  </div>
 		</div>
-
-
-		<div class="col-md-4" style="margin-left:10%;">
-  			<div class="row">
-				<div class="panel panel-info " ">
-					<div class="panel-heading">
-					Laboratuvar Düzenle
-					</div>
-					<div class="panel-body">
-					<div class="form-group">
-						  <label for="sel1">Laboratuvarlar</label>
-						  <select class="form-control" id="sel1">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-						  </select>
-					</div>
-
-					<label for="ad">Laboratuvar Bilgisi:</label>
-					<input type="text" class="form-control" id="ad">
-					<button type="submit" class="btn btn-danger pull-right" style="margin-top: 5px; margin-bottom: 5px;">Sil</button>
-					<button type="submit" class="btn btn-info pull-right" style="margin-top: 5px; margin-bottom: 5px;">Guncelle</button>
-				</div>
-			</div>
-
-		  </div>
-		</div>
-
-
     </div>
 
     <footer>

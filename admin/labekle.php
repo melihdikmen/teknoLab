@@ -11,7 +11,7 @@ echo $labad." ".$labinfo." ";
 
 
 $sql="insert into lab (lab_adi, lab_bilgi) values ('$labad','$labinfo')";
-mysqli_query($baglan,"$sql");
+
 
 
 
