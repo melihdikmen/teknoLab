@@ -1,7 +1,8 @@
-﻿<!DOCTYPE html>
+
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Bootstrap Admin Theme v3</title>
+    <title>TeknoLab Yönetici Paneli</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -22,7 +23,7 @@
 	           <div class="col-md-12">
 	              <!-- Logo -->
 	              <div class="logo">
-	                 <h1><a href="login.html">Admin Yönetim Paneli</a></h1>
+	                 <h1><a href="login.php">Admin Yönetim Paneli</a></h1>
 	              </div>
 	           </div>
 	        </div>
@@ -36,12 +37,13 @@
 			        <div class="box">
 			            <div class="content-wrap">
 			                <h6>Giriş Ekranı</h6>
+                      <form action="kontrol.php" method="post" >
+                      <input type="text" placeholder="Kullanıcı Adı" name="username">
+                      <input type="password" placeholder="Şifre" name="password">
+                    </br>
+                      <input class="btn btn-primary " type="submit" value="Giriş Yap">
 
-			                <input class="form-control" type="text" placeholder="E-mail address">
-			                <input class="form-control" type="password" placeholder="Password">
-			                <div class="action">
-			                    <a class="btn btn-primary signup" href="index.php">Login</a>
-			                </div>
+                    </form>
 			            </div>
 			        </div>
 

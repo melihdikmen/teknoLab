@@ -1,7 +1,15 @@
-﻿<!DOCTYPE html>
+<?php
+include ("izin.php");
+
+$username=$_SESSION["kullanici"];
+$password=$_SESSION["parola"];
+$eposta=$_SESSION["mail"];
+
+ ?>
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Bootstrap Admin Theme v3</title>
+    <title>TeknoLab Yönetici Paneli</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- jQuery UI -->
     <link href="https://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css" rel="stylesheet" media="screen">
@@ -42,9 +50,9 @@
 	                      <li class="dropdown">
 	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hesabım<b class="caret"></b></a>
 	                        <ul class="dropdown-menu animated fadeInUp">
-	                          <li><a href="profile.html">Profil</a></li>
-							  <li><a href="newadmin.html">Yeni Admin Ekle</a></li>
-	                          <li><a href="login.html">Çıkış</a></li>
+	                          <li><a href="profile.php">Profil</a></li>
+							  <li><a href="newadmin.php">Yeni Admin Ekle</a></li>
+	                          <li><a href="exit.php">Çıkış</a></li>
 	                        </ul>
 	                      </li>
 	                    </ul>
@@ -69,7 +77,7 @@
                          </a>
                          <!-- Sub menu -->
                          <ul>
-                            <li><a href="ogr.html">Ekle</a></li>
+                            <li><a href="ogr.php">Ekle</a></li>
                             <li><a href="duzenle.php">Düzenle</a></li>
                         </ul>
 
@@ -81,7 +89,7 @@
                          <!-- Sub menu -->
                          <ul>
                             <li><a href="dersvelabekle.php">Ders ve Laboratuvar Ekle</a></li>
-							<li><a href="dersvelabduz.html">Ders ve Laboratuvar Düzenle</a></li>
+							<li><a href="dersvelabduz.php">Ders ve Laboratuvar Düzenle</a></li>
 
 
                         </ul>
@@ -89,68 +97,38 @@
                 </ul>
              </div>
 		  </div>
-		  <div class="col-md-4">
+		  <div class="col-md-10">
   			<div class="row">
-				<div class="panel panel-primary">
+				<div class="panel panel-danger">
 					<div class="panel-heading">
-					Ders Sil
+					Hesap Bilgileri
 					</div>
 					<div class="panel-body">
-					<label for="ad">Ders Adı:</label>
 
-					<div class="form-group">
-					  <label for="sel1">Dersler</label>
-					  <select class="form-control" id="sel1">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-					  </select>
-					</div>
-
-					<button type="submit" class="btn btn-danger pull-right" style="margin-top: 5px; margin-bottom: 5px;">Sil</button>
+          <form action="adminup.php" method="post">
+					<label for="unvan">Kullanıcı Adı:</label>
+					<input type="text" value="<?php echo $username?>" class="form-control" name="username">
+					<label for="unvan">Şifre:</label>
+					<input type="text" value="<?php echo $password ?>" class="form-control" name="password">
+					<label for="unvan">E-posta:</label>
+					<input type="text" value="<?php echo $eposta?>" class="form-control" name="eposta">
+					<button type="submit" class="btn btn-danger pull-right" style="margin-top: 5px; margin-bottom: 5px;">Güncelle</button>
+        </form>
 				</div>
 			</div>
 
-		  </div>
-		</div>
 
 
-		<div class="col-md-4" style="margin-left:10%;">
-  			<div class="row">
-				<div class="panel panel-info " ">
-					<div class="panel-heading">
-					Laboratuvar Düzenle
-					</div>
-					<div class="panel-body">
-					<div class="form-group">
-						  <label for="sel1">Laboratuvarlar</label>
-						  <select class="form-control" id="sel1">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-						  </select>
-					</div>
-
-					<label for="ad">Laboratuvar Bilgisi:</label>
-					<input type="text" class="form-control" id="ad">
-					<button type="submit" class="btn btn-danger pull-right" style="margin-top: 5px; margin-bottom: 5px;">Sil</button>
-					<button type="submit" class="btn btn-info pull-right" style="margin-top: 5px; margin-bottom: 5px;">Guncelle</button>
-				</div>
-			</div>
 
 		  </div>
 		</div>
-
-
     </div>
 
     <footer>
          <div class="container">
 
             <div class="copy text-center">
-               Copyright 2014 <a href='#'>Website</a>
+               Copyright 2018 <a href='#'>TeknoLab</a>
             </div>
 
          </div>

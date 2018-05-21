@@ -1,7 +1,10 @@
+<?php
+include ("izin.php");
+ ?>
 ﻿<!DOCTYPE html>
 <html>
   <head>
-    <title>Bootstrap Admin Theme v3</title>
+    <title>TeknoLab Yönetici Paneli</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- jQuery UI -->
     <link href="https://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css" rel="stylesheet" media="screen">
@@ -42,9 +45,9 @@
 	                      <li class="dropdown">
 	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hesabım<b class="caret"></b></a>
 	                        <ul class="dropdown-menu animated fadeInUp">
-	                          <li><a href="profile.html">Profil</a></li>
-							  <li><a href="newadmin.html">Yeni Admin Ekle</a></li>
-	                          <li><a href="login.html">Çıkış</a></li>
+	                          <li><a href="profile.php">Profil</a></li>
+							  <li><a href="newadmin.php">Yeni Admin Ekle</a></li>
+	                          <li><a href="exit.php">Çıkış</a></li>
 	                        </ul>
 	                      </li>
 	                    </ul>
@@ -69,7 +72,7 @@
                          </a>
                          <!-- Sub menu -->
                          <ul>
-                            <li><a href="ogr.html">Ekle</a></li>
+                            <li><a href="ogr.php">Ekle</a></li>
                             <li><a href="duzenle.php">Düzenle</a></li>
                         </ul>
 
@@ -81,7 +84,7 @@
                          <!-- Sub menu -->
                          <ul>
                             <li><a href="dersvelabekle.php">Ders ve Laboratuvar Ekle</a></li>
-							<li><a href="dersvelabduz.html">Ders ve Laboratuvar Düzenle</a></li>
+							<li><a href="dersvelabduz.php">Ders ve Laboratuvar Düzenle</a></li>
 
 
                         </ul>
@@ -89,37 +92,102 @@
                 </ul>
              </div>
 		  </div>
-		  <div class="col-md-10">
+		  <div class="col-md-4">
   			<div class="row">
-				<div class="panel panel-danger">
+				<div class="panel panel-primary">
 					<div class="panel-heading">
-					Hesap Bilgileri
+					Ders Sil
 					</div>
 					<div class="panel-body">
 
+					<label for="ad">Ders Adı:</label>
 
-					<label for="unvan">Kullanıcı Adı:</label>
-					<input type="text" class="form-control" id="username">
-					<label for="unvan">Şifre:</label>
-					<input type="text" class="form-control" id="password">
-					<label for="unvan">E-posta:</label>
-					<input type="text" class="form-control" id="eposta">
-					<button type="submit" class="btn btn-danger pull-right" style="margin-top: 5px; margin-bottom: 5px;">Güncelle</button>
+					<div class="form-group">
+            <form action="derssil.php" method="post">
+					  <label for="sel1">Dersler</label>
+					  <select class="form-control" id="sel1" name="dersad">
+              <?php
+              include ("baglan.php");
+
+              $sql=mysqli_query($baglan,"select * from dersler ");
+
+              while($oku=mysqli_fetch_array($sql))
+              {
+                $ad=$oku["DersAd"];
+
+                echo "<option>$ad</option>";
+
+              }
+
+
+
+              ?>
+					  </select>
+            <label for="ad">Öğretim Görevlisi</label>
+            <input type="text" class="form-control" name="ograd" >
+
+            	<button type="submit" class="btn btn-danger pull-right" style="margin-top: 5px; margin-bottom: 5px;">Sil</button>
+          </form>
+					</div>
+
+
+
 				</div>
 			</div>
 
+		  </div>
+		</div>
 
 
+		<div class="col-md-4" style="margin-left:10%;">
+  			<div class="row">
+				<div class="panel panel-info ">
+					<div class="panel-heading">
+					Laboratuvar Düzenle
+					</div>
+					<div class="panel-body">
+            <form method="post" id="labform">
+					<div class="form-group">
+						  <label for="sel1">Laboratuvarlar</label>
+						  <select onchange="labbilgi(this.value)" class="form-control" id="sel1" name="labad">
+                <?php
+                include ("baglan.php");
+
+                $sql=mysqli_query($baglan,"select * from lab ");
+
+                while($oku=mysqli_fetch_array($sql))
+                {
+                  $ad=$oku["lab_adi"];
+
+                  echo "<option>$ad</option>";
+
+                }
+
+
+
+                ?>
+						  </select>
+					</div>
+
+					<label for="ad">Laboratuvar Bilgisi:</label>
+					<input type="text" class="form-control" id="bilgi" name="labilgi" >
+					<button onclick="submitForm('labsil.php')" type="submit" class="btn btn-danger pull-right" style="margin-top: 5px; margin-bottom: 5px;">Sil</button>
+					<button onclick="submitForm('labguncelle.php')" type="submit" class="btn btn-info pull-right" style="margin-top: 5px; margin-bottom: 5px;">Guncelle</button>
+        </form>
+				</div>
+			</div>
 
 		  </div>
 		</div>
+
+
     </div>
 
     <footer>
          <div class="container">
 
             <div class="copy text-center">
-               Copyright 2014 <a href='#'>Website</a>
+               Copyright 2018 <a href='#'>TeknoLab</a>
             </div>
 
          </div>
@@ -139,6 +207,7 @@
     <script src="vendors/datatables/dataTables.bootstrap.js"></script>
 
     <script src="js/custom.js"></script>
+    <script src="js/labbilgi.js"></script>
     <script src="js/tables.js"></script>
   </body>
 </html>

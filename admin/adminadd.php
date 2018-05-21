@@ -2,18 +2,18 @@
 
 include ("baglan.php");
 
-$ad=$_POST["ad"];
-$soyad=$_POST["soyad"];
-$unvan=$_POST["unvan"];
-$eposta=$_POST["eposta"];
 $username=$_POST["username"];
+$eposta=$_POST["eposta"];
 $password=$_POST["password"];
 
 
 
-if($ad&&$soyad&&$unvan&&$eposta&&$username&&$password)
+if($username&&$eposta&&$password)
 {
-  $sql="insert into ogr (ad,soyad,unvan,username,password,eposta) values ('$ad','$soyad','$unvan','$username','$password','$eposta')";
+  $sql="insert into admin (kullanicAdi, sifre,eposta) values ('$username','$password','$eposta')";
+
+
+
 
   $sonuc=mysqli_query($baglan,"$sql");
 
@@ -25,12 +25,15 @@ if($ad&&$soyad&&$unvan&&$eposta&&$username&&$password)
     echo "Başarıyla eklendi";
 
   mysqli_close($baglan);
+
 }
 
-else {
-  
 
+else
+ {
   echo "Tüm alanları doldurmanız gereklidir.";
-
 }
+
+
+
 ?>

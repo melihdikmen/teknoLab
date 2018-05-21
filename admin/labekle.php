@@ -7,10 +7,8 @@ $labinfo=$_POST["labinfo"];
 
 
 
-echo $labad." ".$labinfo." ";
-
-
-$sql="insert into lab (lab_adi, lab_bilgi) values ('$labad','$labinfo')";
+if($labad&&$labinfo)
+{$sql="insert into lab (lab_adi, lab_bilgi) values ('$labad','$labinfo')";
 
 
 
@@ -25,6 +23,15 @@ else
   echo "Başarıyla eklendi";
 
 mysqli_close($baglan);
+
+
+}
+
+else {
+  echo "Tüm alanları doldurmanız gerekmetedir.";
+}
+
+
 
 
 ?>

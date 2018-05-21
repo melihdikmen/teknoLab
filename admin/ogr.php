@@ -1,7 +1,10 @@
-﻿<!DOCTYPE html>
+<?php
+include ("izin.php");
+ ?>
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Bootstrap Admin Theme v3</title>
+    <title>TeknoLab Yönetici Paneli</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- jQuery UI -->
     <link href="https://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css" rel="stylesheet" media="screen">
@@ -42,9 +45,9 @@
 	                      <li class="dropdown">
 	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hesabım<b class="caret"></b></a>
 	                        <ul class="dropdown-menu animated fadeInUp">
-	                          <li><a href="profile.html">Profil</a></li>
-							  <li><a href="newadmin.html">Yeni Admin Ekle</a></li>
-	                          <li><a href="login.html">Çıkış</a></li>
+	                          <li><a href="profile.php">Profil</a></li>
+							  <li><a href="newadmin.php">Yeni Admin Ekle</a></li>
+	                          <li><a href="exit.php">Çıkış</a></li>
 	                        </ul>
 	                      </li>
 	                    </ul>
@@ -69,7 +72,7 @@
                          </a>
                          <!-- Sub menu -->
                          <ul>
-                            <li><a href="ogr.html">Ekle</a></li>
+                            <li><a href="ogr.php">Ekle</a></li>
                             <li><a href="duzenle.php">Düzenle</a></li>
                         </ul>
 
@@ -81,7 +84,7 @@
                          <!-- Sub menu -->
                          <ul>
                             <li><a href="dersvelabekle.php">Ders ve Laboratuvar Ekle</a></li>
-							<li><a href="dersvelabduz.html">Ders ve Laboratuvar Düzenle</a></li>
+							<li><a href="dersvelabduz.php">Ders ve Laboratuvar Düzenle</a></li>
 
 
                         </ul>
@@ -125,7 +128,7 @@
          <div class="container">
 
             <div class="copy text-center">
-               Copyright 2014 <a href='#'>Website</a>
+               Copyright 2018 <a href='#'>TeknoLab</a>
             </div>
 
          </div>
